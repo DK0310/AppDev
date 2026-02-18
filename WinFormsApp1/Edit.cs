@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class AdminEdit : Form
+    public partial class Edit : Form
     {
-        public AdminEdit()
+        public Edit()
         {
             InitializeComponent();
         }
