@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.Models
 {
     public class Person
     {

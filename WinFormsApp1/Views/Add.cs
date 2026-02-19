@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System;
+using System.Windows.Forms;
+using WinFormsApp1.Controllers;
+using WinFormsApp1.Models;
+
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.Views
 {
     public partial class Add : Form
     {
-        private Main parentForm;
+        private PersonController controller;
 
-        public Add(Main parent)
+        public Add(PersonController controller)
         {
             InitializeComponent();
-            this.parentForm = parent;
+            this.controller = controller;
             comboBoxUserType.SelectedIndex = 0;
         }
 
@@ -95,7 +96,7 @@ namespace WinFormsApp1
             bool isFullTime = radioButton1.Checked;
 
             Admin newAdmin = new Admin(name, telephone, email, "Administration", salary, workingHours, isFullTime);
-            parentForm.adminList.Add(newAdmin);
+            controller.AddAdmin(newAdmin);
 
             MessageBox.Show("Admin added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             label1.Text = $"Latest: {newAdmin.Name} - {newAdmin.Role}";
@@ -115,7 +116,7 @@ namespace WinFormsApp1
             string sub2 = txtTeacherSub2.Text;
 
             Teacher newTeacher = new Teacher(name, telephone, email, "Teaching Staff", salary, sub1, sub2);
-            parentForm.teacherList.Add(newTeacher);
+            controller.AddTeacher(newTeacher);
 
             MessageBox.Show("Teacher added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             label1.Text = $"Latest: {newTeacher.Name} - {newTeacher.Role}";
@@ -135,7 +136,7 @@ namespace WinFormsApp1
             string sub3 = txtStudentSub3.Text;
 
             Student newStudent = new Student(name, telephone, email, "Student", sub1, sub2, sub3);
-            parentForm.studentList.Add(newStudent);
+            controller.AddStudent(newStudent);
 
             MessageBox.Show("Student added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             label1.Text = $"Latest: {newStudent.Name} - {newStudent.Role}";
@@ -160,3 +161,4 @@ namespace WinFormsApp1
         }
     }
 }
+
