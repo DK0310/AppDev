@@ -159,7 +159,7 @@ This application follows the **MVC (Model-View-Controller)** pattern:
 
 - Built with Windows Forms and .NET 10
 - Implements MVC architecture pattern
-- Inspired by modern user management systems
+- Inspired design by [RJ Code Advance](https://www.youtube.com/watch?v=BtOEztT1Qzk)
 
 ---
 
